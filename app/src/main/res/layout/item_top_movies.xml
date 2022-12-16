@@ -7,7 +7,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/dataRoot"
+        android:id="@+id/dataRoot2"
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:background="@drawable/bg_main"
@@ -17,14 +17,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
+            android:id="@+id/guideline23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="150dp" />
 
         <TextView
-            android:id="@+id/tvMovieName"
+            android:id="@+id/tvMovieName2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -35,20 +35,20 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@+id/guideline23"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imgVote"
+            android:id="@+id/imgVote2"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/ic_round_star_24"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/tvMovieName"
+            app:layout_constraintStart_toStartOf="@+id/guideline23"
+            app:layout_constraintTop_toBottomOf="@+id/tvMovieName2"
             app:tint="@color/iconColor" />
 
         <TextView
-            android:id="@+id/tvRate"
+            android:id="@+id/tvRate2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -56,23 +56,23 @@
             android:textColor="@color/txtColorOne"
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imgVote"
-            app:layout_constraintStart_toEndOf="@+id/imgVote"
-            app:layout_constraintTop_toTopOf="@+id/imgVote" />
+            app:layout_constraintBottom_toBottomOf="@+id/imgVote2"
+            app:layout_constraintStart_toEndOf="@+id/imgVote2"
+            app:layout_constraintTop_toTopOf="@+id/imgVote2" />
 
 
         <ImageView
-            android:id="@+id/imgLang"
+            android:id="@+id/imgLang2"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/ic_round_language_24"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/imgVote"
+            app:layout_constraintStart_toStartOf="@+id/guideline23"
+            app:layout_constraintTop_toBottomOf="@id/imgVote2"
             app:tint="@color/iconColor" />
 
         <TextView
-            android:id="@+id/tvLang"
+            android:id="@+id/tvLang2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -80,22 +80,22 @@
             android:textColor="@color/txtColorOne"
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imgLang"
-            app:layout_constraintStart_toEndOf="@+id/imgLang"
-            app:layout_constraintTop_toTopOf="@+id/imgLang" />
+            app:layout_constraintBottom_toBottomOf="@+id/imgLang2"
+            app:layout_constraintStart_toEndOf="@+id/imgLang2"
+            app:layout_constraintTop_toTopOf="@+id/imgLang2" />
 
         <ImageView
-            android:id="@+id/imgDate"
+            android:id="@+id/imgDate2"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/ic_round_date_range_24"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/imgLang"
+            app:layout_constraintStart_toStartOf="@+id/guideline23"
+            app:layout_constraintTop_toBottomOf="@+id/imgLang2"
             app:tint="@color/iconColor" />
 
         <TextView
-            android:id="@+id/tvMovieDateRelease"
+            android:id="@+id/tvMovieDateRelease2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -104,24 +104,24 @@
             android:textSize="10sp"
             android:textStyle="bold"
 
-            app:layout_constraintBottom_toBottomOf="@+id/imgDate"
-            app:layout_constraintStart_toEndOf="@+id/imgDate"
-            app:layout_constraintTop_toTopOf="@+id/imgDate" />
+            app:layout_constraintBottom_toBottomOf="@+id/imgDate2"
+            app:layout_constraintStart_toEndOf="@+id/imgDate2"
+            app:layout_constraintTop_toTopOf="@+id/imgDate2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/imgRoot"
+        android:id="@+id/imgRoot2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/dataRoot"
+        app:layout_constraintStart_toStartOf="@id/dataRoot2"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgMovie"
+            android:id="@+id/imgMovie2"
             android:layout_width="115dp"
             android:layout_height="161dp"
             android:layout_marginTop="2dp"

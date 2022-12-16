@@ -1,6 +1,5 @@
 package com.example.myapplication.Adapters
 
-
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,22 +10,21 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.size.Scale
 import com.example.myapplication.R
-import com.example.myapplication.databinding.ItemMovieBinding
-import com.example.myapplication.utils.Constants.POSTER_BASE_URL
-
-import com.example.myapplication.api.response.MoviesListResponse
-
+import com.example.myapplication.api.response.TopMovieList
+import com.example.myapplication.api.response.UpcomingListResponse
+import com.example.myapplication.databinding.ItemMoviesUpcomingBinding
+import com.example.myapplication.utils.Constants
 import javax.inject.Inject
 
-class MoviesAdapter @Inject() constructor() :
-    PagingDataAdapter<MoviesListResponse.Result, MoviesAdapter.ViewHolder>(differCallback) {
+class UpcomingMoviesAdapter @Inject() constructor() :
+    PagingDataAdapter<UpcomingListResponse.Result, UpcomingMoviesAdapter.ViewHolder>(differCallback) {
 
-    private lateinit var binding: ItemMovieBinding
+    private lateinit var binding: ItemMoviesUpcomingBinding
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        binding = ItemMovieBinding.inflate(inflater, parent, false)
+        binding = ItemMoviesUpcomingBinding.inflate(inflater, parent, false)
         context = parent.context
         return ViewHolder()
     }
@@ -39,19 +37,16 @@ class MoviesAdapter @Inject() constructor() :
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")
-        fun bind(item: MoviesListResponse.Result) {
+        fun bind(item: UpcomingListResponse.Result) {
             binding.apply {
-                tvMovieName.text = item.title
-                tvMovieDateRelease.text = item.releaseDate
-                tvRate.text=item.voteAverage.toString()
-                val moviePosterURL = POSTER_BASE_URL + item?.posterPath
-                imgMovie.load(moviePosterURL){
+                movieNameTxt.text = item.title
+                movieInfoTxt.text=item.vote_average.toString()
+                val moviePosterURL = Constants.POSTER_BACKDROP_URL + item?.backdrop_path
+                moviePosterImg.load(moviePosterURL){
                     crossfade(true)
                     placeholder(R.drawable.poster_placeholder)
-                    scale(Scale.FILL)
+                    scale(Scale.FIT)
                 }
-                tvLang.text=item.originalLanguage
-
                 root.setOnClickListener {
                     onItemClickListener?.let {
                         it(item)
@@ -61,19 +56,19 @@ class MoviesAdapter @Inject() constructor() :
         }
     }
 
-    private var onItemClickListener: ((MoviesListResponse.Result) -> Unit)? = null
+    private var onItemClickListener: ((UpcomingListResponse.Result) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: (MoviesListResponse.Result) -> Unit) {
+    fun setOnItemClickListener(listener: (UpcomingListResponse.Result) -> Unit) {
         onItemClickListener = listener
     }
 
     companion object {
-        val differCallback = object : DiffUtil.ItemCallback<MoviesListResponse.Result>() {
-            override fun areItemsTheSame(oldItem: MoviesListResponse.Result, newItem: MoviesListResponse.Result): Boolean {
+        val differCallback = object : DiffUtil.ItemCallback<UpcomingListResponse.Result>() {
+            override fun areItemsTheSame(oldItem: UpcomingListResponse.Result, newItem: UpcomingListResponse.Result): Boolean {
                 return oldItem.id == oldItem.id
             }
 
-            override fun areContentsTheSame(oldItem: MoviesListResponse.Result, newItem: MoviesListResponse.Result): Boolean {
+            override fun areContentsTheSame(oldItem: UpcomingListResponse.Result, newItem: UpcomingListResponse.Result): Boolean {
                 return oldItem == newItem
             }
         }

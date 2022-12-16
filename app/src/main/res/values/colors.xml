@@ -8,7 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
+    <color name="custom">#323232</color>
     <color name="colorPrimary">#212121</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF5252</color>
+
+    <color name="txtColorOne">#E8DFCA</color>
+    <color name="txtColorTitle">#F5EFE6</color>
+    <color name="iconColor">#2B4865</color>
 </resources>
